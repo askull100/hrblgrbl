@@ -1,0 +1,34 @@
+Log in client
+	-the ability to log in
+		-check to see if server is on/ exists
+		-check to see if server is full
+		-check to see if server has password(optional idea)
+	-title/logo
+
+game client
+	-make requests/send data to the server
+	-needs to have buttons for playing
+		-x button
+		-o button
+		-log out button
+		-forfeit(optional idea)
+	-needs to process game logic
+		-winning/ losing
+		-placing x's and o's
+		-post-game logic
+			-restart?
+			-increment wins / losses (optional idea)
+			-disconnect
+	-keep a bool determining if the client is the host client
+		-if host client logs out, shut down server
+
+
+
+
+server window
+	-your IP Address / player name
+	(COULD JUST BE IN CODE)
+		-list the players 
+		-list of player connection statuses (whether or not they've timed out, their ping etc.)
+	-keep track of what squares have been taken up, know what moves are valid
+	-have a button for shutting down the server
