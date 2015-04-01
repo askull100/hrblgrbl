@@ -1,0 +1,9 @@
+C:\Users\Isaac\Desktop\Final\MyClient\bin\Debug\MyClient.exe.config
+C:\Users\Isaac\Desktop\Final\MyClient\bin\Debug\MyClient.exe
+C:\Users\Isaac\Desktop\Final\MyClient\bin\Debug\MyClient.pdb
+C:\Users\Isaac\Desktop\Final\MyClient\obj\Debug\Login.csprojResolveAssemblyReference.cache
+C:\Users\Isaac\Desktop\Final\MyClient\obj\Debug\Login.LoginForm.resources
+C:\Users\Isaac\Desktop\Final\MyClient\obj\Debug\Login.Properties.Resources.resources
+C:\Users\Isaac\Desktop\Final\MyClient\obj\Debug\Login.csproj.GenerateResource.Cache
+C:\Users\Isaac\Desktop\Final\MyClient\obj\Debug\MyClient.exe
+C:\Users\Isaac\Desktop\Final\MyClient\obj\Debug\MyClient.pdb

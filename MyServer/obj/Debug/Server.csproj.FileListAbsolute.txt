@@ -1,0 +1,11 @@
+C:\Users\Isaac\Desktop\Final\MyServer\bin\Debug\MyServer.exe.config
+C:\Users\Isaac\Desktop\Final\MyServer\bin\Debug\MyServer.exe
+C:\Users\Isaac\Desktop\Final\MyServer\bin\Debug\MyServer.pdb
+C:\Users\Isaac\Desktop\Final\MyServer\bin\Debug\ThreadObject.dll
+C:\Users\Isaac\Desktop\Final\MyServer\bin\Debug\ThreadObject.pdb
+C:\Users\Isaac\Desktop\Final\MyServer\obj\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Users\Isaac\Desktop\Final\MyServer\obj\Debug\Server.ServerForm.resources
+C:\Users\Isaac\Desktop\Final\MyServer\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Isaac\Desktop\Final\MyServer\obj\Debug\Server.csproj.GenerateResource.Cache
+C:\Users\Isaac\Desktop\Final\MyServer\obj\Debug\MyServer.exe
+C:\Users\Isaac\Desktop\Final\MyServer\obj\Debug\MyServer.pdb
