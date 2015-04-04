@@ -1,0 +1,17 @@
+D:\ClientServer\MyClient\bin\Debug\MyClient.exe.config
+D:\ClientServer\MyClient\bin\Debug\MyClient.exe
+D:\ClientServer\MyClient\bin\Debug\MyClient.pdb
+D:\ClientServer\MyClient\obj\Debug\MyClient.ClientForm.resources
+D:\ClientServer\MyClient\obj\Debug\MyClient.Properties.Resources.resources
+D:\ClientServer\MyClient\obj\Debug\MyClient.csproj.GenerateResource.Cache
+D:\ClientServer\MyClient\obj\Debug\MyClient.exe
+D:\ClientServer\MyClient\obj\Debug\MyClient.pdb
+C:\Users\Isaac\Desktop\Final\MyClient\bin\Debug\MyClient.exe.config
+C:\Users\Isaac\Desktop\Final\MyClient\obj\Debug\MyClient.exe
+C:\Users\Isaac\Desktop\Final\MyClient\obj\Debug\MyClient.pdb
+C:\Users\Isaac\Desktop\Final\MyClient\bin\Debug\MyClient.exe
+C:\Users\Isaac\Desktop\Final\MyClient\bin\Debug\MyClient.pdb
+C:\Users\Isaac\Desktop\Final\MyClient\obj\Debug\MyClient.csprojResolveAssemblyReference.cache
+C:\Users\Isaac\Desktop\Final\MyClient\obj\Debug\MyClient.ClientForm.resources
+C:\Users\Isaac\Desktop\Final\MyClient\obj\Debug\MyClient.Properties.Resources.resources
+C:\Users\Isaac\Desktop\Final\MyClient\obj\Debug\MyClient.csproj.GenerateResource.Cache
