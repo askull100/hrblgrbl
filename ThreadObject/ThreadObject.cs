@@ -23,7 +23,6 @@ namespace MyThreadObject
         public ThreadObject()
         {
             myThread = new Thread(new ThreadStart(ThreadFunction));
-
         }
 
         private void ThreadFunction()

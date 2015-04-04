@@ -1,0 +1,20 @@
+X:\GAME\Tohme Tony\ClientServer\CommLib\bin\Debug\CommLib.dll
+X:\GAME\Tohme Tony\ClientServer\CommLib\bin\Debug\CommLib.pdb
+X:\GAME\Tohme Tony\ClientServer\CommLib\obj\Debug\CommLib.dll
+X:\GAME\Tohme Tony\ClientServer\CommLib\obj\Debug\CommLib.pdb
+X:\GAME\Tohme Tony\ClientServer\CommLib\obj\Debug\CommLib.csprojResolveAssemblyReference.cache
+C:\Users\moor0479\Desktop\ClientServer\CommLib\bin\Debug\CommLib.dll
+C:\Users\moor0479\Desktop\ClientServer\CommLib\bin\Debug\CommLib.pdb
+C:\Users\moor0479\Desktop\ClientServer\CommLib\obj\Debug\CommLib.csprojResolveAssemblyReference.cache
+C:\Users\moor0479\Desktop\ClientServer\CommLib\obj\Debug\CommLib.dll
+C:\Users\moor0479\Desktop\ClientServer\CommLib\obj\Debug\CommLib.pdb
+G:\School\Networking\ClientServer\CommLib\bin\Debug\CommLib.dll
+G:\School\Networking\ClientServer\CommLib\bin\Debug\CommLib.pdb
+G:\School\Networking\ClientServer\CommLib\obj\Debug\CommLib.csprojResolveAssemblyReference.cache
+G:\School\Networking\ClientServer\CommLib\obj\Debug\CommLib.dll
+G:\School\Networking\ClientServer\CommLib\obj\Debug\CommLib.pdb
+C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\CommLib\bin\Debug\CommLib.dll
+C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\CommLib\bin\Debug\CommLib.pdb
+C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\CommLib\obj\Debug\CommLib.csprojResolveAssemblyReference.cache
+C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\CommLib\obj\Debug\CommLib.dll
+C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\CommLib\obj\Debug\CommLib.pdb

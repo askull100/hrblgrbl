@@ -8,3 +8,8 @@ C:\Users\Isaac\Desktop\Final\ThreadObject\bin\Debug\ThreadObject.pdb
 C:\Users\Isaac\Desktop\Final\ThreadObject\obj\Debug\ThreadObject.csprojResolveAssemblyReference.cache
 C:\Users\Isaac\Desktop\Final\ThreadObject\obj\Debug\ThreadObject.dll
 C:\Users\Isaac\Desktop\Final\ThreadObject\obj\Debug\ThreadObject.pdb
+C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\ThreadObject\bin\Debug\ThreadObject.dll
+C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\ThreadObject\bin\Debug\ThreadObject.pdb
+C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\ThreadObject\obj\Debug\ThreadObject.csprojResolveAssemblyReference.cache
+C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\ThreadObject\obj\Debug\ThreadObject.dll
+C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\ThreadObject\obj\Debug\ThreadObject.pdb

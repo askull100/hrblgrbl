@@ -37,7 +37,7 @@ namespace Server
         {
             InitializeComponent();
             IPHostEntry IPHost = Dns.GetHostByName(Dns.GetHostName());
-            this.Text = "TCP/IP - " + IPHost.AddressList[0].ToString();
+            this.Text = "Tic Tac Toe -  Hosted By" + IPHost.AddressList[0].ToString();
         }
 
         private void StartButton_Click(object sender, EventArgs e)
@@ -104,7 +104,7 @@ namespace Server
             }
             else
             {
-                ListOfConnections.Items.Add(ip);
+               // ListOfConnections.Items.Add(ip);
             }
         }
 
@@ -134,7 +134,7 @@ namespace Server
             }
             else
             {
-                ListOfCommands.Items.Add(command);
+               // ListOfCommands.Items.Add(command);
             }
         }
     }
