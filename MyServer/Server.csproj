@@ -79,6 +79,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CommLib\CommLib.csproj">
+      <Project>{ea4f4869-b4e6-4826-ac2f-c7eab9e4f1a7}</Project>
+      <Name>CommLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ThreadObject\ThreadObject.csproj">
       <Project>{17ce58a4-c17f-49ab-a930-26c1868a10db}</Project>
       <Name>ThreadObject</Name>

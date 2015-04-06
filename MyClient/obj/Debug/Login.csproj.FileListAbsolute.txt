@@ -16,3 +16,9 @@ C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\MyClient\obj\Debug\Login.
 C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\MyClient\obj\Debug\Login.LoginForm.resources
 C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\MyClient\obj\Debug\Login.Properties.Resources.resources
 C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\MyClient\obj\Debug\Login.csproj.GenerateResource.Cache
+C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\MyClient\bin\Debug\CommLib.dll
+C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\MyClient\bin\Debug\CommLib.pdb
+C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\MyClient\bin\Debug\MyServer.exe
+C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\MyClient\bin\Debug\ThreadObject.dll
+C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\MyClient\bin\Debug\MyServer.pdb
+C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\MyClient\bin\Debug\ThreadObject.pdb

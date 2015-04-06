@@ -42,6 +42,12 @@
     <Compile Include="ThreadObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommLib\CommLib.csproj">
+      <Project>{ea4f4869-b4e6-4826-ac2f-c7eab9e4f1a7}</Project>
+      <Name>CommLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

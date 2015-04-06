@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 //required namespaces
 using System.Net;
 using System.Net.Sockets;
 using System.IO;
 using System.Threading;
 using MyThreadObject;
+using CommLib;
 
 namespace Server
 {
@@ -30,6 +32,8 @@ namespace Server
         private Thread CommandThreadListener = null;
         private Thread DataThreadListener = null;
 
+        public bool m_IsHost = false;
+
         //List of my connections
         Dictionary<string, ThreadObject> ListOfServerThreads = new Dictionary<string, ThreadObject>();
 
@@ -37,7 +41,17 @@ namespace Server
         {
             InitializeComponent();
             IPHostEntry IPHost = Dns.GetHostByName(Dns.GetHostName());
-            this.Text = "Tic Tac Toe -  Hosted By" + IPHost.AddressList[0].ToString();
+            this.Text = "Tic Tac Toe - Hosted By" + IPHost.AddressList[0].ToString();
+        }
+
+        public ServerForm(bool isHost)
+        {
+            InitializeComponent();
+            IPHostEntry IPHost = Dns.GetHostByName(Dns.GetHostName());
+            if (isHost == true)
+                this.Text = "Tic Tac Toe - You Are Hosting";
+            else
+                this.Text = "Tic Tac Toe - Hosted By" + IPHost.AddressList[0].ToString();
         }
 
         private void StartButton_Click(object sender, EventArgs e)

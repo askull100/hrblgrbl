@@ -12,7 +12,7 @@ using System.Threading;
 using System.Net;
 using System.Net.Sockets;
 using System.IO;
-//using CommLib;
+using CommLib;
 
 namespace Login
 {
@@ -36,7 +36,6 @@ namespace Login
             //Set the error labels to be invisible
             errorLabel.Visible = false;
             h_errorLabel.Visible = false;
-
         }
 
         //private void ConnectButton_Click(object sender, EventArgs e)
@@ -73,10 +72,12 @@ namespace Login
 
         private void HostButton_Click(object sender, EventArgs e)
         {
-            isHost = true;
             //figure out how to close login form and open server form.
             //try converting bool to string, then sending that over via message
-            //need commlib functionality to do so godammit
+            Server.ServerForm s = new Server.ServerForm(true);
+            isHost = true;
+            s.Show();
+            this.Hide();
         }
 
         private void passwordOn_CheckedChanged(object sender, EventArgs e)

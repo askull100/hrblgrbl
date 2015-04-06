@@ -13,3 +13,5 @@ C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\ThreadObject\bin\Debug\Th
 C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\ThreadObject\obj\Debug\ThreadObject.csprojResolveAssemblyReference.cache
 C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\ThreadObject\obj\Debug\ThreadObject.dll
 C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\ThreadObject\obj\Debug\ThreadObject.pdb
+C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\ThreadObject\bin\Debug\CommLib.dll
+C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\ThreadObject\bin\Debug\CommLib.pdb

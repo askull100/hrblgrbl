@@ -20,3 +20,5 @@ C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\MyServer\bin\Debug\MyServ
 C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\MyServer\bin\Debug\MyServer.pdb
 C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\MyServer\bin\Debug\ThreadObject.dll
 C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\MyServer\bin\Debug\ThreadObject.pdb
+C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\MyServer\bin\Debug\CommLib.dll
+C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\MyServer\bin\Debug\CommLib.pdb
