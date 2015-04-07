@@ -33,16 +33,33 @@ namespace Server
         private Thread DataThreadListener = null;
 
         public bool m_IsHost = false;
-        public string m_Password;
+        public string m_Password = null;
+        public string m_CompareString;
 
         //List of my connections
         Dictionary<string, ThreadObject> ListOfServerThreads = new Dictionary<string, ThreadObject>();
+
+        Dictionary<string, CommandDataObject> CommandsDataSet =
+            new Dictionary<string, CommandDataObject>();
+
+        private Object __object = new Object();
 
         public ServerForm()
         {
             InitializeComponent();
             IPHostEntry IPHost = Dns.GetHostByName(Dns.GetHostName());
             this.Text = "Tic Tac Toe - Hosted By" + IPHost.AddressList[0].ToString();
+
+            //=====START THE LISTENERS
+            //Start the Command Listener
+            CommandThreadListener = new Thread(new ThreadStart(CommandListener));
+            bCommandListener = true;
+            CommandThreadListener.Start();
+
+            //Start the Data Listener
+            DataThreadListener = new Thread(new ThreadStart(DataListener));
+            bDataListener = true;
+            DataThreadListener.Start();
         }
 
         public ServerForm(bool isHost)
@@ -53,19 +70,22 @@ namespace Server
                 this.Text = "Tic Tac Toe - You Are Hosting";
             else
                 this.Text = "Tic Tac Toe - Hosted By" + IPHost.AddressList[0].ToString();
-        }
 
-        private void StartButton_Click(object sender, EventArgs e)
-        {
             //=====START THE LISTENERS
             //Start the Command Listener
             CommandThreadListener = new Thread(new ThreadStart(CommandListener));
             bCommandListener = true;
             CommandThreadListener.Start();
+
             //Start the Data Listener
             DataThreadListener = new Thread(new ThreadStart(DataListener));
             bDataListener = true;
             DataThreadListener.Start();
+        }
+
+        private void StartButton_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void CommandListener()
@@ -119,7 +139,7 @@ namespace Server
             }
             else
             {
-               // ListOfConnections.Items.Add(ip);
+                ListOfConnections.Items.Add(ip);
             }
         }
 
@@ -133,11 +153,10 @@ namespace Server
             int bytes = NetStream.Read(data, 0, 1024);
             string Command = Encoding.ASCII.GetString(data, 0, bytes);
             //Do something with the command
-            if(Command == "PASSWORD")
-            {
-
-            }
+            //.........
             //Display the command in the command list box
+            string buttonPressed = CommandDataObject.Instance.DecodeUIDFromMessage(Command);
+            string buttonLetter = CommandDataObject.Instance.DecodeMessageFromUID(Command);
             Command = ((client.RemoteEndPoint) as IPEndPoint).Address.ToString() + ">>>" + Command;
             UpdateCommandsListBox(Command);
         }
@@ -152,7 +171,7 @@ namespace Server
             }
             else
             {
-               // ListOfCommands.Items.Add(command);
+                ListOfCommands.Items.Add(command);
             }
         }
     }

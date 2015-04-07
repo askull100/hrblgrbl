@@ -37,3 +37,5 @@ C:\Users\moor0479\Desktop\trunk\MyClient\obj\Debug\Login.csprojResolveAssemblyRe
 C:\Users\moor0479\Desktop\trunk\MyClient\obj\Debug\Login.LoginForm.resources
 C:\Users\moor0479\Desktop\trunk\MyClient\obj\Debug\Login.Properties.Resources.resources
 C:\Users\moor0479\Desktop\trunk\MyClient\obj\Debug\Login.csproj.GenerateResource.Cache
+C:\Users\moor0479\Desktop\trunk\MyClient\bin\Debug\Login.exe
+C:\Users\moor0479\Desktop\trunk\MyClient\bin\Debug\Login.pdb

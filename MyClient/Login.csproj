@@ -83,6 +83,10 @@
       <Project>{ea4f4869-b4e6-4826-ac2f-c7eab9e4f1a7}</Project>
       <Name>CommLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Login\Client.csproj">
+      <Project>{93987861-9f55-4dff-a9b4-652f9307da9f}</Project>
+      <Name>Client</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyServer\Server.csproj">
       <Project>{ccbc93e4-b8cc-4828-b905-497ddebea15e}</Project>
       <Name>Server</Name>

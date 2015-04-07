@@ -39,6 +39,7 @@
             this.gameButton9 = new System.Windows.Forms.Button();
             this.logoutButton = new System.Windows.Forms.Button();
             this.playerTurnLabel = new System.Windows.Forms.Label();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // gameButton1
@@ -150,11 +151,22 @@
             this.playerTurnLabel.TabIndex = 10;
             this.playerTurnLabel.Text = "It is Player X\'s Turn.";
             // 
-            // Form1
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.ForeColor = System.Drawing.Color.Red;
+            this.errorLabel.Location = new System.Drawing.Point(55, 21);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(58, 13);
+            this.errorLabel.TabIndex = 11;
+            this.errorLabel.Text = "Error Label";
+            // 
+            // GameClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(336, 293);
+            this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.playerTurnLabel);
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.gameButton9);
@@ -166,7 +178,7 @@
             this.Controls.Add(this.gameButton3);
             this.Controls.Add(this.gameButton2);
             this.Controls.Add(this.gameButton1);
-            this.Name = "Form1";
+            this.Name = "GameClient";
             this.Text = "Tic Tac Toe";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -186,6 +198,7 @@
         private System.Windows.Forms.Button gameButton9;
         private System.Windows.Forms.Button logoutButton;
         private System.Windows.Forms.Label playerTurnLabel;
+        private System.Windows.Forms.Label errorLabel;
     }
 }
 

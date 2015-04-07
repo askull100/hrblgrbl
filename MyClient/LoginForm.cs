@@ -55,13 +55,26 @@ namespace Login
 
             try
             {
-                //COMMAND CONNECTION
-                //open the connection to the command port
-                ClientConnection = new TcpClient(ServerIPAddress.Text,
-                                    Convert.ToInt32(PortNumber.Text));
 
-                //Get the command stream
-                CommandStream = ClientConnection.GetStream();
+                Client.GameClient c = new Client.GameClient(ServerIPAddress.Text, PortNumber.Text);
+                c.Show();
+
+                /*//s.m_CompareString = passwordTextBox.Text;
+                //try
+                //{
+                //    if (s.m_Password == s.m_CompareString || s.m_Password == null)
+                //    {
+                //        Client.GameClient c = new Client.GameClient(ServerIPAddress.Text, PortNumber.Text);
+                //        c.Show();
+                //    }
+                //}
+                //catch (Exception ex)
+                //{
+                //    errorLabel.Visible = true;
+                //    errorLabel.Text = "Failed to Connect";
+                //}*/
+
+                this.Hide();
             }
             catch(Exception ex)
             {
@@ -81,6 +94,10 @@ namespace Login
                 s.Show();
                 if (passwordOn.Checked == true)
                     s.m_Password = h_passwordTextBox.Text;
+                //Make and show the game client
+                Client.GameClient c = new Client.GameClient(h_ServerIPAddress.Text, PortNumber.Text);
+                c.Show();
+
                 this.Hide();
             }
             catch(Exception ex)
