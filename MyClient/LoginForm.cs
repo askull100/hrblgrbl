@@ -74,10 +74,20 @@ namespace Login
         {
             //figure out how to close login form and open server form.
             //try converting bool to string, then sending that over via message
-            Server.ServerForm s = new Server.ServerForm(true);
-            isHost = true;
-            s.Show();
-            this.Hide();
+            try
+            {
+                Server.ServerForm s = new Server.ServerForm(true);
+                isHost = true;
+                s.Show();
+                if (passwordOn.Checked == true)
+                    s.m_Password = h_passwordTextBox.Text;
+                this.Hide();
+            }
+            catch(Exception ex)
+            {
+                h_errorLabel.Visible = true;
+                h_errorLabel.Text = "Failed to Start Game";
+            }
         }
 
         private void passwordOn_CheckedChanged(object sender, EventArgs e)

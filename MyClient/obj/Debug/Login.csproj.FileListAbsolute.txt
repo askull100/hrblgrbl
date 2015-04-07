@@ -22,3 +22,18 @@ C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\MyClient\bin\Debug\MyServ
 C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\MyClient\bin\Debug\ThreadObject.dll
 C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\MyClient\bin\Debug\MyServer.pdb
 C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\MyClient\bin\Debug\ThreadObject.pdb
+C:\Users\moor0479\Desktop\trunk\MyClient\bin\Debug\MyClient.exe.config
+C:\Users\moor0479\Desktop\trunk\MyClient\obj\Debug\MyClient.exe
+C:\Users\moor0479\Desktop\trunk\MyClient\obj\Debug\MyClient.pdb
+C:\Users\moor0479\Desktop\trunk\MyClient\bin\Debug\MyClient.exe
+C:\Users\moor0479\Desktop\trunk\MyClient\bin\Debug\MyClient.pdb
+C:\Users\moor0479\Desktop\trunk\MyClient\bin\Debug\CommLib.dll
+C:\Users\moor0479\Desktop\trunk\MyClient\bin\Debug\MyServer.exe
+C:\Users\moor0479\Desktop\trunk\MyClient\bin\Debug\ThreadObject.dll
+C:\Users\moor0479\Desktop\trunk\MyClient\bin\Debug\CommLib.pdb
+C:\Users\moor0479\Desktop\trunk\MyClient\bin\Debug\MyServer.pdb
+C:\Users\moor0479\Desktop\trunk\MyClient\bin\Debug\ThreadObject.pdb
+C:\Users\moor0479\Desktop\trunk\MyClient\obj\Debug\Login.csprojResolveAssemblyReference.cache
+C:\Users\moor0479\Desktop\trunk\MyClient\obj\Debug\Login.LoginForm.resources
+C:\Users\moor0479\Desktop\trunk\MyClient\obj\Debug\Login.Properties.Resources.resources
+C:\Users\moor0479\Desktop\trunk\MyClient\obj\Debug\Login.csproj.GenerateResource.Cache

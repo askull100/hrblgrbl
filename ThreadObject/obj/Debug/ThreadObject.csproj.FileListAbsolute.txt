@@ -15,3 +15,10 @@ C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\ThreadObject\obj\Debug\Th
 C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\ThreadObject\obj\Debug\ThreadObject.pdb
 C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\ThreadObject\bin\Debug\CommLib.dll
 C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\ThreadObject\bin\Debug\CommLib.pdb
+C:\Users\moor0479\Desktop\trunk\ThreadObject\bin\Debug\ThreadObject.dll
+C:\Users\moor0479\Desktop\trunk\ThreadObject\bin\Debug\ThreadObject.pdb
+C:\Users\moor0479\Desktop\trunk\ThreadObject\bin\Debug\CommLib.dll
+C:\Users\moor0479\Desktop\trunk\ThreadObject\bin\Debug\CommLib.pdb
+C:\Users\moor0479\Desktop\trunk\ThreadObject\obj\Debug\ThreadObject.csprojResolveAssemblyReference.cache
+C:\Users\moor0479\Desktop\trunk\ThreadObject\obj\Debug\ThreadObject.dll
+C:\Users\moor0479\Desktop\trunk\ThreadObject\obj\Debug\ThreadObject.pdb

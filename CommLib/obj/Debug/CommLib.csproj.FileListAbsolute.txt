@@ -18,3 +18,8 @@ C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\CommLib\bin\Debug\CommLib
 C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\CommLib\obj\Debug\CommLib.csprojResolveAssemblyReference.cache
 C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\CommLib\obj\Debug\CommLib.dll
 C:\Users\Dmitry Goldman\Desktop\Networking Final\trunk\CommLib\obj\Debug\CommLib.pdb
+C:\Users\moor0479\Desktop\trunk\CommLib\bin\Debug\CommLib.dll
+C:\Users\moor0479\Desktop\trunk\CommLib\bin\Debug\CommLib.pdb
+C:\Users\moor0479\Desktop\trunk\CommLib\obj\Debug\CommLib.csprojResolveAssemblyReference.cache
+C:\Users\moor0479\Desktop\trunk\CommLib\obj\Debug\CommLib.dll
+C:\Users\moor0479\Desktop\trunk\CommLib\obj\Debug\CommLib.pdb

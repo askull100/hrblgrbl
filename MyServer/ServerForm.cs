@@ -33,6 +33,7 @@ namespace Server
         private Thread DataThreadListener = null;
 
         public bool m_IsHost = false;
+        public string m_Password;
 
         //List of my connections
         Dictionary<string, ThreadObject> ListOfServerThreads = new Dictionary<string, ThreadObject>();
@@ -132,7 +133,10 @@ namespace Server
             int bytes = NetStream.Read(data, 0, 1024);
             string Command = Encoding.ASCII.GetString(data, 0, bytes);
             //Do something with the command
-            //........
+            if(Command == "PASSWORD")
+            {
+
+            }
             //Display the command in the command list box
             Command = ((client.RemoteEndPoint) as IPEndPoint).Address.ToString() + ">>>" + Command;
             UpdateCommandsListBox(Command);
