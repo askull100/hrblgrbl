@@ -80,6 +80,7 @@ namespace Login
 
                 //Make and show the game client
                 Client.GameClient c = new Client.GameClient(IPHost.AddressList[0].ToString(), PortNumber.Text);
+                c.m_IsHost = true;
                 c.Show();
 
                 this.Hide();

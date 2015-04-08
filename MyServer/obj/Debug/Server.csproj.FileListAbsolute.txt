@@ -35,3 +35,5 @@ C:\Users\moor0479\Desktop\trunk\MyServer\obj\Debug\Server.Properties.Resources.r
 C:\Users\moor0479\Desktop\trunk\MyServer\obj\Debug\Server.csproj.GenerateResource.Cache
 C:\Users\moor0479\Desktop\trunk\MyServer\obj\Debug\MyServer.exe
 C:\Users\moor0479\Desktop\trunk\MyServer\obj\Debug\MyServer.pdb
+C:\Users\moor0479\Desktop\trunk\MyServer\bin\Debug\Login.exe
+C:\Users\moor0479\Desktop\trunk\MyServer\bin\Debug\Login.pdb

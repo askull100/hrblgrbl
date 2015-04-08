@@ -26,6 +26,7 @@ namespace Client
         public string m_ServerAddress;
         public int m_PortNumber = 8080;
         public bool isConnected = false;
+        public bool m_IsHost = false;
 
         public GameClient()
         {
@@ -165,22 +166,44 @@ namespace Client
             {
                 if (ClientConnection != null)
                 {
-                    Byte[] command = new Byte[1024];
-                    string commandStr = "SHUTDOWN";
-                    command = Encoding.ASCII.GetBytes(commandStr);
-                    CommandStream.Write(command, 0, command.GetLength(0));
+                    if(m_IsHost == false)
+                    {
+                        Byte[] command = new Byte[1024];
+                        string commandStr = "SHUTDOWN";
+                        command = Encoding.ASCII.GetBytes(commandStr);
+                        CommandStream.Write(command, 0, command.GetLength(0));
 
-                    ClientConnection.Close();
-                    CommandStream.Close();
-                    isRunning = false;
+                        ClientConnection.Close();
+                        CommandStream.Close();
+                        isRunning = false;
 
-                    Close();
+                        Close();
 
-                    //if (ClientThread.IsAlive == true)
-                    //{
-                    //    errorLabel.Visible = true;
-                    //    errorLabel.Text = "Thread still alive. Failed to Disconnect";
-                    //}
+                        if (ClientThread.IsAlive == true)
+                        {
+                            errorLabel.Visible = true;
+                            errorLabel.Text = "Thread still alive. Failed to Disconnect";
+                        }
+                    }
+                    else if(m_IsHost == true)
+                    {
+                        Byte[] command = new Byte[1024];
+                        string commandStr = "SHUTDOWN_H";
+                        command = Encoding.ASCII.GetBytes(commandStr);
+                        CommandStream.Write(command, 0, command.GetLength(0));
+
+                        ClientConnection.Close();
+                        CommandStream.Close();
+                        isRunning = false;
+
+                        Close();
+
+                        if (ClientThread.IsAlive == true)
+                        {
+                            errorLabel.Visible = true;
+                            errorLabel.Text = "Thread still alive. Failed to Disconnect";
+                        }
+                    }
                 }
             }
             catch(Exception ex)

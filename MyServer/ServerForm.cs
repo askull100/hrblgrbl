@@ -28,9 +28,13 @@ namespace Server
         private bool bCommandListener = false;
         private bool bDataListener = false;
 
+        private bool ThreadRunning = false;
+
         //My Listeners Threads
         private Thread CommandThreadListener = null;
         private Thread DataThreadListener = null;
+
+        TcpListener tcpListener = null;
 
         public bool m_IsHost = false;
         public string m_Password = null;
@@ -82,7 +86,7 @@ namespace Server
 
         private void CommandListener()
         {
-            TcpListener tcpListener = new TcpListener(IPAddress.Any, COM_PORT);
+            tcpListener = new TcpListener(IPAddress.Any, COM_PORT);
             tcpListener.Start();
             
             while(bCommandListener == true)
@@ -108,6 +112,7 @@ namespace Server
                     clientThread.client = client;
                     clientThread.ThreadDel = new ThreadObject.ThreadDelegate(CommandProcessHandler);
                     clientThread.StartThread();
+
                     //Map the IP of the connection(key) to the ThreadObject(value)
                     string ip = "COM_" + (client.RemoteEndPoint as IPEndPoint).Address.ToString();
                     ListOfServerThreads.Add(ip, clientThread);
@@ -154,40 +159,106 @@ namespace Server
         {
             Byte[] data = new Byte[1024];
             NetworkStream NetStream = null;
+            ThreadRunning = true;
 
             //Exception check
             if(client.Connected == true)
                 NetStream = new NetworkStream(client);
 
-            while(bCommandListener == true)
+            while(ThreadRunning == true)
             {
+                int bytes = 0;
+                string Command = string.Empty;
                 //Read the command from the client
-                int bytes = NetStream.Read(data, 0, 1024);
-                string Command = Encoding.ASCII.GetString(data, 0, bytes);
+                try
+                {
+                    bytes = NetStream.Read(data, 0, 1024);
+                    Command = Encoding.ASCII.GetString(data, 0, bytes);
+                }
+                catch(Exception ex)
+                {
+
+                }
 
                 //Do something with the command
                 if (Command == "SHUTDOWN")
                 {
+                    //Close the thread's NetStream
                     NetStream.Close();
+                    
+                    //Remove the client's name from the list, then update the list
                     ListOfServerThreads.Remove("COM_" + (client.RemoteEndPoint as IPEndPoint).Address.ToString());
                     ClearConnetionsListBox();
                     foreach (KeyValuePair<string,ThreadObject> entry in ListOfServerThreads)
                     {
-                        UpdateConnectionsListBox(entry.Value.ToString());
+                        UpdateConnectionsListBox(entry.Key.ToString());
                     }
+
+                    //Close the client's socket
                     client.Close();
-                    bCommandListener = false;
+
+                    //Close the thread
+                    ThreadRunning = false;
+
                     continue;
                 }
+                if(Command == "SHUTDOWN_H")
+                {
+                    //Close the thread's NetStream
+                    NetStream.Close();
+
+                    //Remove the client's name from the list, then update the list
+                    ListOfServerThreads.Remove("COM_" + (client.RemoteEndPoint as IPEndPoint).Address.ToString());
+                    ClearConnetionsListBox();
+                    foreach (KeyValuePair<string, ThreadObject> entry in ListOfServerThreads)
+                    {
+                        UpdateConnectionsListBox(entry.Key.ToString());
+                    }
+
+                    //Close the client's socket
+                    client.Close();
+
+                    //Close the thread
+                    ThreadRunning = false;
+
+                    //Since the host is leaving, shut down the server
+                    ShutdownServer();
+
+                    continue;
+                }
+                
                 //Display the command in the command list box
-                string buttonPressed;
-                string buttonLetter;
+                string buttonPressed = string.Empty;
+                string buttonLetter = string.Empty;
 
-                buttonPressed = CommandDataObject.Instance.DecodeUIDFromMessage(Command);
-                buttonLetter = CommandDataObject.Instance.DecodeMessageFromUID(Command);
+                try
+                {
+                    buttonPressed = CommandDataObject.Instance.DecodeUIDFromMessage(Command);
+                    buttonLetter = CommandDataObject.Instance.DecodeMessageFromUID(Command);
+                    Command = ((client.RemoteEndPoint) as IPEndPoint).Address.ToString() + ">>>" + Command;
+                    UpdateCommandsListBox(Command);
+                }
+                catch(Exception ex)
+                {
 
-                Command = ((client.RemoteEndPoint) as IPEndPoint).Address.ToString() + ">>>" + Command;
-                UpdateCommandsListBox(Command);
+                }
+                
+            }
+        }
+
+        private delegate void ShutdownServerDel();
+        private void ShutdownServer()
+        {
+            if(this.InvokeRequired)
+            {
+                ShutdownServerDel ServerDel = new ShutdownServerDel(ShutdownServer);
+                this.Invoke(ServerDel);
+            }
+            else
+            {
+                bCommandListener = false;
+                tcpListener.Stop();
+                Close();
             }
         }
 

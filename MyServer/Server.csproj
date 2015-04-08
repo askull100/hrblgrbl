@@ -83,6 +83,10 @@
       <Project>{ea4f4869-b4e6-4826-ac2f-c7eab9e4f1a7}</Project>
       <Name>CommLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Login\Client.csproj">
+      <Project>{93987861-9f55-4dff-a9b4-652f9307da9f}</Project>
+      <Name>Client</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ThreadObject\ThreadObject.csproj">
       <Project>{17ce58a4-c17f-49ab-a930-26c1868a10db}</Project>
       <Name>ThreadObject</Name>
