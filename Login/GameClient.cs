@@ -71,6 +71,13 @@ namespace Client
 
                 //Get the command stream
                 CommandStream = ClientConnection.GetStream();
+                if (CommandStream != null)
+                {
+                    isConnected = true;
+                    ClientThread = new Thread(Receive);
+                    isRunning = true;
+                    ClientThread.Start();
+                }
                 errorLabel.Visible = false;
             }
             catch (Exception ex)
@@ -84,11 +91,22 @@ namespace Client
         {
             Byte[] data = new Byte[1024];
             string message = string.Empty;
+            int BytesReceived = 0;
+
             while (isRunning == true)
             {
-                int BytesReceived = CommandStream.Read(data, 0, 1024);
+                try
+                {
+                    BytesReceived = CommandStream.Read(data, 0, 1024);
+                }
+                catch(Exception block)
+                {
+
+                }
+                
                 message = Encoding.ASCII.GetString(data, 0, BytesReceived);
-                //Parse(message);
+
+                //Do something with the message
             }
         }
 
@@ -141,6 +159,36 @@ namespace Client
         {
             //Ask player if he wants to forfeit the match
             //Do logout logic here
+            errorLabel.Visible = false;
+
+            try
+            {
+                if (ClientConnection != null)
+                {
+                    Byte[] command = new Byte[1024];
+                    string commandStr = "SHUTDOWN";
+                    command = Encoding.ASCII.GetBytes(commandStr);
+                    CommandStream.Write(command, 0, command.GetLength(0));
+
+                    ClientConnection.Close();
+                    CommandStream.Close();
+                    isRunning = false;
+
+                    Close();
+
+                    //if (ClientThread.IsAlive == true)
+                    //{
+                    //    errorLabel.Visible = true;
+                    //    errorLabel.Text = "Thread still alive. Failed to Disconnect";
+                    //}
+                }
+            }
+            catch(Exception ex)
+            {
+                errorLabel.Visible = true;
+                errorLabel.Text = "Failed to Disconnect";
+            }
+            
         }
 
         private void gameButton1_Click(object sender, EventArgs e)

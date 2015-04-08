@@ -39,9 +39,6 @@ namespace Server
         //List of my connections
         Dictionary<string, ThreadObject> ListOfServerThreads = new Dictionary<string, ThreadObject>();
 
-        Dictionary<string, CommandDataObject> CommandsDataSet =
-            new Dictionary<string, CommandDataObject>();
-
         private Object __object = new Object();
 
         public ServerForm()
@@ -124,6 +121,20 @@ namespace Server
 
         }
 
+        private delegate void ClearConnectionsDel();
+        private void ClearConnetionsListBox()
+        {
+            if(this.InvokeRequired)
+            {
+                ClearConnectionsDel ClearDel = new ClearConnectionsDel(ClearConnetionsListBox);
+                this.Invoke(ClearDel);
+            }
+            else
+            {
+                ListOfConnections.Items.Clear();
+            }
+        }
+
         private delegate void UpdateConnectionDel(string ip);
         private void UpdateConnectionsListBox(string ip)
         {
@@ -142,18 +153,42 @@ namespace Server
         private void CommandProcessHandler(Socket client)
         {
             Byte[] data = new Byte[1024];
-            NetworkStream NetStream = new NetworkStream(client);
+            NetworkStream NetStream = null;
 
-            //Read the command from the client
-            int bytes = NetStream.Read(data, 0, 1024);
-            string Command = Encoding.ASCII.GetString(data, 0, bytes);
-            //Do something with the command
-            //.........
-            //Display the command in the command list box
-            string buttonPressed = CommandDataObject.Instance.DecodeUIDFromMessage(Command);
-            string buttonLetter = CommandDataObject.Instance.DecodeMessageFromUID(Command);
-            Command = ((client.RemoteEndPoint) as IPEndPoint).Address.ToString() + ">>>" + Command;
-            UpdateCommandsListBox(Command);
+            //Exception check
+            if(client.Connected == true)
+                NetStream = new NetworkStream(client);
+
+            while(bCommandListener == true)
+            {
+                //Read the command from the client
+                int bytes = NetStream.Read(data, 0, 1024);
+                string Command = Encoding.ASCII.GetString(data, 0, bytes);
+
+                //Do something with the command
+                if (Command == "SHUTDOWN")
+                {
+                    NetStream.Close();
+                    ListOfServerThreads.Remove("COM_" + (client.RemoteEndPoint as IPEndPoint).Address.ToString());
+                    ClearConnetionsListBox();
+                    foreach (KeyValuePair<string,ThreadObject> entry in ListOfServerThreads)
+                    {
+                        UpdateConnectionsListBox(entry.Value.ToString());
+                    }
+                    client.Close();
+                    bCommandListener = false;
+                    continue;
+                }
+                //Display the command in the command list box
+                string buttonPressed;
+                string buttonLetter;
+
+                buttonPressed = CommandDataObject.Instance.DecodeUIDFromMessage(Command);
+                buttonLetter = CommandDataObject.Instance.DecodeMessageFromUID(Command);
+
+                Command = ((client.RemoteEndPoint) as IPEndPoint).Address.ToString() + ">>>" + Command;
+                UpdateCommandsListBox(Command);
+            }
         }
 
         private delegate void UpdateCommandLBDel(string command);
