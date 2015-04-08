@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.ListOfConnections = new System.Windows.Forms.ListBox();
-            this.StartButton = new System.Windows.Forms.Button();
             this.ListOfCommands = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -38,7 +37,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 39);
+            this.label1.Location = new System.Drawing.Point(5, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 0;
@@ -47,25 +46,15 @@
             // ListOfConnections
             // 
             this.ListOfConnections.FormattingEnabled = true;
-            this.ListOfConnections.Location = new System.Drawing.Point(15, 55);
+            this.ListOfConnections.Location = new System.Drawing.Point(8, 23);
             this.ListOfConnections.Name = "ListOfConnections";
             this.ListOfConnections.Size = new System.Drawing.Size(93, 225);
             this.ListOfConnections.TabIndex = 1;
             // 
-            // StartButton
-            // 
-            this.StartButton.Location = new System.Drawing.Point(371, 7);
-            this.StartButton.Name = "StartButton";
-            this.StartButton.Size = new System.Drawing.Size(59, 45);
-            this.StartButton.TabIndex = 7;
-            this.StartButton.Text = "Start Server";
-            this.StartButton.UseVisualStyleBackColor = true;
-            this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
-            // 
             // ListOfCommands
             // 
             this.ListOfCommands.FormattingEnabled = true;
-            this.ListOfCommands.Location = new System.Drawing.Point(114, 55);
+            this.ListOfCommands.Location = new System.Drawing.Point(107, 23);
             this.ListOfCommands.Name = "ListOfCommands";
             this.ListOfCommands.Size = new System.Drawing.Size(251, 225);
             this.ListOfCommands.TabIndex = 8;
@@ -73,7 +62,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(115, 39);
+            this.label2.Location = new System.Drawing.Point(108, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 9;
@@ -83,10 +72,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 292);
+            this.ClientSize = new System.Drawing.Size(381, 261);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ListOfCommands);
-            this.Controls.Add(this.StartButton);
             this.Controls.Add(this.ListOfConnections);
             this.Controls.Add(this.label1);
             this.Name = "ServerForm";
@@ -100,7 +88,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox ListOfConnections;
-        private System.Windows.Forms.Button StartButton;
         private System.Windows.Forms.ListBox ListOfCommands;
         private System.Windows.Forms.Label label2;
     }

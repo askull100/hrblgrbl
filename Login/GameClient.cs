@@ -20,8 +20,12 @@ namespace Client
         private TcpClient ClientConnection = null;
         private NetworkStream CommandStream = null;
 
+        private Thread ClientThread = null;
+        bool isRunning = false;
+
         public string m_ServerAddress;
         public int m_PortNumber = 8080;
+        public bool isConnected = false;
 
         public GameClient()
         {
@@ -38,12 +42,21 @@ namespace Client
 
                 //Get the command stream
                 CommandStream = ClientConnection.GetStream();
+
+                if (CommandStream != null)
+                {
+                    isConnected = true;
+                    ClientThread = new Thread(Receive);
+                    isRunning = true;
+                    ClientThread.Start();
+                }
+
                 errorLabel.Visible = false;
             }
             catch (Exception ex)
             {
-                //errorLabel.Visible = true;
-                //errorLabel.Text = "Failed to Connect";
+                errorLabel.Visible = true;
+                errorLabel.Text = "Failed to Connect";
             }
         }
         public GameClient(string address, string port)
@@ -67,13 +80,25 @@ namespace Client
             }
         }
 
+        private void Receive()
+        {
+            Byte[] data = new Byte[1024];
+            string message = string.Empty;
+            while (isRunning == true)
+            {
+                int BytesReceived = CommandStream.Read(data, 0, 1024);
+                message = Encoding.ASCII.GetString(data, 0, BytesReceived);
+                //Parse(message);
+            }
+        }
+
         private void SlotSelected(int slotNumber)
         {
             //Handle player input here
             //Check if its your turn and if you can even place your token there
             //Don't forget, game /logic/ is processed on the server
 
-            //If the move is valid, send the button press to the server
+            //If the move is valid, create a string to send
             Byte[] command = new Byte[1024];
             string commandStr ="ERROR";
             switch(slotNumber)
@@ -107,6 +132,7 @@ namespace Client
                     break;
             }
             
+            //Encode and send the string
             command = Encoding.ASCII.GetBytes(commandStr);
             CommandStream.Write(command, 0, command.GetLength(0));
         }
