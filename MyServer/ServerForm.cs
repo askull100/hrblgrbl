@@ -43,7 +43,38 @@ namespace Server
         //List of my connections
         Dictionary<string, ThreadObject> ListOfServerThreads = new Dictionary<string, ThreadObject>();
 
-        private Object __object = new Object();
+        #region GameLogicVars
+
+        private List<List<int>> m_PossibleWins = new List<List<int>>()
+        {
+            new List<int>() {0,1,2},
+            new List<int>() {3,4,5},
+            new List<int>() {6,7,8},
+            new List<int>() {0,3,6},
+            new List<int>() {1,4,7},
+            new List<int>() {2,5,8},
+            new List<int>() {0,4,8},
+            new List<int>() {2,4,6},
+        };
+
+        enum Player
+        {
+            One,
+            Two
+        }
+
+        enum Token
+        {
+            None,
+            X,
+            O
+        }
+
+        private Dictionary<string, Player> playerIp = new Dictionary<string, Player>();
+        private List<Token> m_Tokens = new List<Token>();
+        private Player m_CurrentTurn = Player.One;
+
+        #endregion
 
         public ServerForm()
         {
@@ -82,6 +113,8 @@ namespace Server
             DataThreadListener = new Thread(new ThreadStart(DataListener));
             bDataListener = true;
             DataThreadListener.Start();
+
+            ResetTokens();
         }
 
         private void CommandListener()
@@ -116,6 +149,16 @@ namespace Server
                     //Map the IP of the connection(key) to the ThreadObject(value)
                     string ip = "COM_" + (client.RemoteEndPoint as IPEndPoint).Address.ToString();
                     ListOfServerThreads.Add(ip, clientThread);
+
+                    if (ListOfServerThreads.Count == 1)
+                    {
+                        playerIp.Add((client.RemoteEndPoint as IPEndPoint).Address.ToString(), Player.One);
+                    }
+                    else if (ListOfServerThreads.Count == 2)
+                    {
+                        playerIp.Add((client.RemoteEndPoint as IPEndPoint).Address.ToString(), Player.Two);
+                    }
+
                     UpdateConnectionsListBox(ip);
                 }
             }
@@ -236,6 +279,16 @@ namespace Server
                     buttonPressed = CommandDataObject.Instance.DecodeUIDFromMessage(Command);
                     buttonLetter = CommandDataObject.Instance.DecodeMessageFromUID(Command);
                     Command = ((client.RemoteEndPoint) as IPEndPoint).Address.ToString() + ">>>" + Command;
+
+                    Player player;
+                    if (playerIp.TryGetValue(((client.RemoteEndPoint) as IPEndPoint).Address.ToString(), out player))
+                    {
+                        if (player == Player.One)
+                            PlaceToken(Token.X, int.Parse(buttonPressed));
+                        else if (player == Player.Two)
+                            PlaceToken(Token.O, int.Parse(buttonPressed));
+                    }
+
                     UpdateCommandsListBox(Command);
                 }
                 catch(Exception ex)
@@ -274,6 +327,51 @@ namespace Server
             {
                 ListOfCommands.Items.Add(command);
             }
+        }
+
+        private void PlaceToken(Token placingToken, int slot)
+        {
+            if ((m_CurrentTurn == Player.One && placingToken == Token.X) || m_CurrentTurn == Player.Two && placingToken == Token.O)
+            {
+                m_Tokens[slot - 1] = placingToken;
+            }
+        }
+
+        private void ResetTokens()
+        {
+            m_Tokens = new List<Token>();
+            for (int i = 0; i < 9; i++)
+            {
+                m_Tokens.Add(Token.None);
+            }
+        }
+
+        private void CheckForWin()
+        {
+            //Go through each win possibility
+            foreach (List<int> win in m_PossibleWins)
+            {
+                Token tokenToCheck = Token.O;
+                //Check on both tokens
+                for (int i = 0; i < 2; i++)
+                {
+                    if (i == 1)
+                        tokenToCheck = Token.X;
+                    if (m_Tokens[win[0]] == tokenToCheck && m_Tokens[win[1]] == tokenToCheck && m_Tokens[win[2]] == tokenToCheck)
+                    {
+                        //Win was found
+                        PlayerWin(Player.One);
+                        return;
+                    }
+                }
+            }
+
+            //No win
+        }
+
+        private void PlayerWin(Player winningPlayer)
+        {
+            Console.Write("PLAYER 1 WINS");
         }
     }
 }

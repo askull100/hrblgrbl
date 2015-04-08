@@ -22,3 +22,10 @@ C:\Users\moor0479\Desktop\trunk\ThreadObject\bin\Debug\CommLib.pdb
 C:\Users\moor0479\Desktop\trunk\ThreadObject\obj\Debug\ThreadObject.csprojResolveAssemblyReference.cache
 C:\Users\moor0479\Desktop\trunk\ThreadObject\obj\Debug\ThreadObject.dll
 C:\Users\moor0479\Desktop\trunk\ThreadObject\obj\Debug\ThreadObject.pdb
+C:\Users\Isaac\Desktop\asd\hrblgrbl-master\ThreadObject\bin\Debug\ThreadObject.dll
+C:\Users\Isaac\Desktop\asd\hrblgrbl-master\ThreadObject\bin\Debug\ThreadObject.pdb
+C:\Users\Isaac\Desktop\asd\hrblgrbl-master\ThreadObject\bin\Debug\CommLib.dll
+C:\Users\Isaac\Desktop\asd\hrblgrbl-master\ThreadObject\bin\Debug\CommLib.pdb
+C:\Users\Isaac\Desktop\asd\hrblgrbl-master\ThreadObject\obj\Debug\ThreadObject.csprojResolveAssemblyReference.cache
+C:\Users\Isaac\Desktop\asd\hrblgrbl-master\ThreadObject\obj\Debug\ThreadObject.dll
+C:\Users\Isaac\Desktop\asd\hrblgrbl-master\ThreadObject\obj\Debug\ThreadObject.pdb
