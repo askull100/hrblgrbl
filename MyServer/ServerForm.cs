@@ -42,6 +42,7 @@ namespace Server
 
         //List of my connections
         Dictionary<string, ThreadObject> ListOfServerThreads = new Dictionary<string, ThreadObject>();
+        List<Socket> ListOfUsers = new List<Socket>();
 
         #region GameLogicVars
 
@@ -117,6 +118,28 @@ namespace Server
             ResetTokens();
         }
 
+        public void SendData(string message, Socket aClient, bool broadcast)
+        {
+            Byte[] data = new Byte[1024];
+            data = Encoding.ASCII.GetBytes(message);
+            NetworkStream NetStream;
+
+            if(broadcast == true)
+            {
+                foreach (Socket client in ListOfUsers)
+                {
+                    NetStream = new NetworkStream(client);
+                    NetStream.Write(data, 0, data.GetLength(0));
+                }
+            }
+            else
+            {
+                NetStream = new NetworkStream(aClient);
+                NetStream.Write(data, 0, data.GetLength(0));
+            }
+
+        }
+
         private void CommandListener()
         {
             tcpListener = new TcpListener(IPAddress.Any, COM_PORT);
@@ -159,6 +182,7 @@ namespace Server
                         playerIp.Add((client.RemoteEndPoint as IPEndPoint).Address.ToString(), Player.Two);
                     }
 
+                    ListOfUsers.Add(client);
                     UpdateConnectionsListBox(ip);
                 }
             }
